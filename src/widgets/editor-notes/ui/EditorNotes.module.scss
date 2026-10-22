@@ -1,0 +1,88 @@
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+
+.panel {
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+
+  @include padding($spacing-6, $spacing-22, $spacing-18, $spacing-22);
+  @include margin($spacing-40, 0, $spacing-70, 0);
+}
+
+.summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+
+  @include padding($spacing-14, 0, $spacing-14, 0);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: "▸ ";
+    color: $color-accent;
+  }
+}
+
+.panel[open] .summary::before {
+  content: "▾ ";
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  font-size: $font-size-sm;
+
+  @include gap($spacing-md);
+  @include margin($spacing-xs, 0, 0, 0);
+}
+
+.list dt {
+  color: $color-text-muted;
+  font-weight: 600;
+}
+
+.list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.list code {
+  background: $color-bg-highlight;
+  border-radius: 6px;
+  font-size: 0.84rem;
+
+  @include padding($spacing-2, $spacing-6, $spacing-2, $spacing-6);
+}
+
+.link {
+  display: inline-block;
+
+  @include margin(0, $spacing-sm, $spacing-2, 0);
+}
+
+.ok {
+  color: $color-success-dark;
+  font-weight: 700;
+}
+
+.warn {
+  color: $color-danger;
+  font-weight: 700;
+}
+
+@include media-max-md {
+  .list {
+    grid-template-columns: 1fr;
+
+    @include gap($spacing-2);
+  }
+
+  .list dd {
+    @include margin(0, 0, $spacing-10, 0);
+  }
+}

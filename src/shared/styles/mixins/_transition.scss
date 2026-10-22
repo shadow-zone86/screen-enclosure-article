@@ -1,0 +1,5 @@
+@use "../variables" as *;
+
+@mixin transition($properties: all, $duration: $duration-base, $easing: ease) {
+  transition: $properties $duration $easing;
+}

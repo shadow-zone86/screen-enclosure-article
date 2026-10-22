@@ -1,0 +1,96 @@
+// =============================================================================
+// Variables: палитра + шкалы + типографика
+// =============================================================================
+
+@forward "palette";
+@use "palette" as *;
+
+// =============================================================================
+// Spacing scale (base 4px)
+// =============================================================================
+
+$spacing-base: 4px !default;
+$spacing-xxs: $spacing-base !default; // 4px
+$spacing-xs: $spacing-base * 2 !default; // 8px
+$spacing-sm: $spacing-base * 3 !default; // 12px
+$spacing-md: $spacing-base * 4 !default; // 16px
+$spacing-lg: $spacing-base * 6 !default; // 24px
+$spacing-xl: $spacing-base * 8 !default; // 32px
+$spacing-xxl: $spacing-base * 12 !default; // 48px
+
+// Полу-шаги: имя = значение в px, только реально используемые в макете.
+$spacing-2: 2px !default;
+$spacing-3: 3px !default;
+$spacing-5: 5px !default;
+$spacing-6: 6px !default;
+$spacing-7: 7px !default;
+$spacing-10: 10px !default;
+$spacing-14: 14px !default;
+$spacing-15: 15px !default;
+$spacing-18: 18px !default;
+$spacing-20: 20px !default;
+$spacing-22: 22px !default;
+$spacing-26: 26px !default;
+$spacing-30: 30px !default;
+$spacing-34: $spacing-30 + $spacing-xxs !default; // 34px
+$spacing-40: 40px !default;
+$spacing-44: 44px !default;
+$spacing-52: 52px !default;
+$spacing-54: 54px !default;
+$spacing-64: 64px !default;
+$spacing-70: 70px !default;
+
+// =============================================================================
+// Breakpoints
+// =============================================================================
+
+$breakpoint-xs: 0 !default;
+$breakpoint-sm: 480px !default;
+$breakpoint-md: 720px !default;
+$breakpoint-lg: 960px !default;
+$breakpoint-xl: 1200px !default;
+
+// =============================================================================
+// Typography
+// =============================================================================
+
+$font-family-base: ui-sans-serif, system-ui, -apple-system, "Segoe UI", roboto,
+  "Helvetica Neue", arial, sans-serif !default;
+$font-size-base: 1.0625rem !default; // 17px
+$line-height-base: 1.65 !default;
+$font-size-xs: 0.75rem !default;
+$font-size-sm: 0.875rem !default;
+$font-size-md: 1rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-xl: 1.5rem !default;
+$font-size-fluid-hero: clamp(1.875rem, 5.2vw, 2.75rem) !default; // 30–44px
+$font-size-fluid-heading: clamp(1.375rem, 3.4vw, 1.6875rem) !default; // 22–27px
+$font-size-fluid-lead: clamp(1.0625rem, 2vw, 1.2188rem) !default; // 17–19.5px
+$font-size-fluid-card: clamp(1.0625rem, 2.2vw, 1.125rem) !default;
+$font-size-cta-title: 1.625rem !default; // 26px
+
+// =============================================================================
+// Borders
+// =============================================================================
+
+$radius-card: 14px !default;
+$radius-cta: 18px !default;
+$radius-control: 10px !default;
+$table-cell-border: 1px solid $color-border !default;
+
+// =============================================================================
+// Motion
+// =============================================================================
+
+$duration-fast: 0.12s !default;
+$duration-base: 0.2s !default;
+$duration-slow: 0.3s !default;
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+// =============================================================================
+// Z-index scale
+// =============================================================================
+
+$z-index-dropdown: 30 !default;
+$z-index-header: 20 !default;
+$z-index-skip-link: 50 !default;

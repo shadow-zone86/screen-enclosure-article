@@ -1,0 +1,35 @@
+@use "../variables" as *;
+@use "spacing" as *;
+
+@mixin field-control-surface {
+  background-color: $color-bg-field;
+  border: 1px solid $color-border;
+  border-radius: $radius-control;
+
+  @include padding($spacing-sm, $spacing-14, $spacing-sm, $spacing-14);
+
+  width: 100%;
+  font: inherit;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  text-align: left;
+  transition: border-color $duration-base $ease-standard, box-shadow $duration-base $ease-standard;
+  outline: none;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 2px $color-primary-035;
+  }
+}
+
+@mixin field-control-invalid {
+  border-color: $color-danger;
+  box-shadow: 0 0 0 2px $color-danger-ring;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-danger;
+    box-shadow: 0 0 0 2px $color-danger-ring;
+  }
+}

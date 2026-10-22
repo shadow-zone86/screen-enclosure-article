@@ -1,0 +1,61 @@
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/field-control" as *;
+
+.form {
+  display: grid;
+  gap: $spacing-md;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+
+  @include padding($spacing-26, $spacing-26, $spacing-26, $spacing-26);
+  @include margin($spacing-26, 0, 0, 0);
+}
+
+.field {
+  display: grid;
+
+  @include gap($spacing-6);
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: 650;
+}
+
+.input {
+  @include field-control-surface;
+
+  font-family: inherit;
+}
+
+.input[aria-invalid="true"] {
+  @include field-control-invalid;
+}
+
+.hint {
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}
+
+.input[aria-invalid="true"] + .hint {
+  color: $color-danger;
+  font-weight: 600;
+}
+
+.success {
+  background: $color-success-012;
+  border: 1px solid $color-success-025;
+  border-radius: $radius-control;
+  color: $color-success-dark;
+
+  @include padding($spacing-18, $spacing-20, $spacing-18, $spacing-20);
+  @include margin($spacing-26, 0, 0, 0);
+}
+
+.success strong {
+  display: block;
+
+  @include margin(0, 0, $spacing-xs, 0);
+}

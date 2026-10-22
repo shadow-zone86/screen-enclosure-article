@@ -1,0 +1,5 @@
+{
+  // Code Spell Checker: вся конфигурация (словари, файлы, слова) — в корневом cspell.json.
+  "cSpell.enabled": true,
+  "cSpell.import": ["${workspaceFolder}/cspell.json"]
+}

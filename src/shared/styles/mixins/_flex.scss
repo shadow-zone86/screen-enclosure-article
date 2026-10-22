@@ -1,0 +1,41 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
+  display: flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $align;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin inline-flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap, $gap: 0) {
+  display: inline-flex;
+  flex-flow: $direction $wrap;
+  justify-content: $justify;
+  align-items: $align;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+  @include flex($direction, center, center, nowrap, $gap);
+}
+
+@mixin flex-between($align: center, $gap: 0) {
+  @include flex(row, space-between, $align, nowrap, $gap);
+}
+
+@mixin flex-col($align: stretch, $justify: flex-start, $gap: 0) {
+  @include flex(column, $justify, $align, nowrap, $gap);
+}
+
+@mixin flex-row($align: center, $justify: flex-start, $gap: 0) {
+  @include flex(row, $justify, $align, nowrap, $gap);
+}
+
+@mixin flex-grow($grow: 1, $shrink: 0, $basis: auto) {
+  flex: $grow $shrink $basis;
+}

@@ -1,0 +1,62 @@
+{
+  "name": "screen-enclosure-article",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SEO article + landing demo: How Much Does a Screen Enclosure Cost in Florida?",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:style": "stylelint \"src/**/*.{scss,css}\"",
+    "spell": "cspell --no-progress",
+    "knip": "knip",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky",
+    "pre-commit": "npm run type-check && npm run lint && npm run lint:style && npm run knip && npm run test && npm run build"
+  },
+  "dependencies": {
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@cspell/dict-ru_ru": "^2.3.4",
+    "@cspell/eslint-plugin": "^10.4.0",
+    "@eslint/js": "^9.39.2",
+    "@storybook/addon-a11y": "^10.6.3",
+    "@storybook/addon-docs": "^10.6.3",
+    "@storybook/nextjs-vite": "^10.6.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vitest/coverage-v8": "^4.1.12",
+    "cspell": "^10.4.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "jsdom": "^27.4.0",
+    "knip": "^6.42.1",
+    "sass": "^1.97.3",
+    "storybook": "^10.6.3",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.65.0",
+    "vite": "^7.3.7",
+    "vitest": "^4.1.12"
+  }
+}

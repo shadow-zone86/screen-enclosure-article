@@ -1,0 +1,48 @@
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+
+.page {
+  @include padding($spacing-54, 0, $spacing-40, 0);
+}
+
+.eyebrow {
+  display: inline-block;
+  color: $color-accent;
+  font-size: $font-size-xs;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  @include margin(0, 0, $spacing-14, 0);
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-fluid-hero;
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+
+  @include margin(0, 0, $spacing-md, 0);
+}
+
+.lead {
+  max-width: 60ch;
+  color: $color-text;
+  font-size: $font-size-fluid-lead;
+
+  @include margin(0, 0, $spacing-xs, 0);
+}
+
+.note {
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+
+  @include margin($spacing-md, 0, 0, 0);
+}
+
+@include media-max-md {
+  .page {
+    @include padding($spacing-40, 0, $spacing-xl, 0);
+  }
+}

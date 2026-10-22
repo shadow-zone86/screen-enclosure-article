@@ -1,0 +1,10 @@
+// =============================================================================
+// Global entry: variables, mixins, base
+// Компонентные стили — в *.module.scss рядом с TSX
+// =============================================================================
+
+@use "variables" as *;
+@use "mixins/flex" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+@use "base";

@@ -1,0 +1,14 @@
+@use "../palette" as *;
+
+/// Тени поверхностей: card — карточка, card-hover — hover карточки, dropdown — всплывающие списки.
+@mixin shadow($level: card) {
+  @if $level == card {
+    box-shadow: 0 1px 0 $color-shadow-subtle;
+  } @else if $level == card-hover {
+    box-shadow: 0 8px 24px $color-shadow-card;
+  } @else if $level == dropdown {
+    box-shadow: 0 4px 12px $color-border-030;
+  } @else {
+    box-shadow: $level;
+  }
+}

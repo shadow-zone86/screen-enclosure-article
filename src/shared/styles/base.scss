@@ -1,0 +1,75 @@
+// =============================================================================
+// Base: reset, body, типографика документа
+// =============================================================================
+
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/a11y" as *;
+@use "mixins/interactive" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+
+  @include motion-reduce {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: $color-bg-page;
+  color: $color-text-primary;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  @include interactive-hover {
+    color: $color-link-hover;
+  }
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: $color-accent-outline;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  z-index: $z-index-skip-link;
+  border-radius: 0 0 $radius-control;
+  background: $color-secondary;
+  color: $color-white;
+
+  @include padding($spacing-sm, $spacing-18, $spacing-sm, $spacing-18);
+
+  &:focus {
+    left: 0;
+  }
+}

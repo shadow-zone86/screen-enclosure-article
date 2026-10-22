@@ -1,0 +1,87 @@
+// =============================================================================
+// Палитра Gulf Coast Screen
+// Единственный источник правды для цветов бренда и UI
+// =============================================================================
+
+// --- Основные (бренд) ---
+$color-primary: #0d6f6a !default;
+$color-primary-light: #14938c !default;
+$color-secondary: #074c48 !default;
+$color-secondary-dark: #063c39 !default;
+$color-secondary-darker: #12211f !default;
+
+// --- CTA, цены, кнопки ---
+$color-accent: #e2703a !default;
+$color-accent-light: #f4a077 !default;
+$color-accent-dark: #d05f2c !default;
+
+// --- Семантика ---
+$color-success: #2f8a4f !default;
+$color-success-dark: #1f5c33 !default;
+$color-danger: #b3401c !default;
+$color-danger-bg: #fff5f1 !default;
+
+// --- Текст ---
+$color-text: #24352f !default;
+$color-text-primary: #12211f !default;
+$color-text-muted: #5d6d69 !default;
+
+// --- Границы ---
+$color-border: #cfd8d3 !default;
+$color-border-soft: rgb(0 0 0 / 12%) !default;
+$color-border-subtle: rgb(0 0 0 / 5%) !default;
+$color-border-faint: rgb(0 0 0 / 3%) !default;
+
+// --- Белый (сплошной) ---
+$color-white: #fff !default;
+
+// --- Фоны ---
+$color-bg: $color-white !default;
+$color-bg-page: #faf6ee !default;
+$color-bg-highlight: #f2f6f3 !default;
+$color-bg-table-hover: #fbfdfb !default;
+$color-bg-field: #fdfefd !default;
+
+// --- Слои CTA ---
+$color-cta-start: #0d6f6a !default;
+$color-cta-mid: #074c48 !default;
+$color-cta-end: #063c39 !default;
+
+// --- Тени ---
+$color-shadow-soft: rgb(0 0 0 / 10%) !default;
+$color-shadow-subtle: rgb(0 0 0 / 3%) !default;
+$color-shadow-card: rgb(0 0 0 / 6%) !default;
+$color-shadow-deep: rgb(0 0 0 / 18%) !default;
+
+// --- Прозрачность белого ---
+$color-white-010: rgb(255 255 255 / 10%) !default;
+$color-white-015: rgb(255 255 255 / 15%) !default;
+$color-white-016: rgb(255 255 255 / 16%) !default;
+
+// --- Ссылки ---
+$color-link: $color-secondary !default;
+$color-link-hover: $color-primary !default;
+
+// =============================================================================
+// Прозрачные оттенки (alpha-шкала)
+// rgba(<токен>, alpha) определён здесь в одном месте; в модулях — только токены.
+// Имя: $color-<токен>-<alpha в процентах, 3 цифры>.
+// =============================================================================
+
+$color-primary-035: rgba($color-primary, 0.35) !default;
+$color-primary-055: rgba($color-primary, 0.55) !default;
+$color-accent-035: rgba($color-accent, 0.35) !default;
+$color-success-012: rgba($color-success, 0.12) !default;
+$color-success-025: rgba($color-success, 0.25) !default;
+$color-danger-025: rgba($color-danger, 0.25) !default;
+$color-border-030: rgba($color-border, 0.3) !default;
+$color-white-042: rgba($color-white, 0.42) !default;
+
+// =============================================================================
+// Семантические оттенки (частые роли)
+// =============================================================================
+
+$color-accent-tint: rgba($color-accent, 0.08) !default;
+$color-accent-outline: rgba($color-accent, 0.2) !default;
+$color-success-ring: rgba($color-success, 0.25) !default;
+$color-danger-ring: rgba($color-danger, 0.2) !default;

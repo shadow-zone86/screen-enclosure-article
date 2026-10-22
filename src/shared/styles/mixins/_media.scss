@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+@mixin media-max-sm {
+  @media (width <= #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-max-md {
+  @media (width <= #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin media-max-lg {
+  @media (width <= #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin media($min: null, $max: null) {
+  @if $min != null and $max != null {
+    @media (#{$min} <= width <= #{$max}) {
+      @content;
+    }
+  } @else if $min != null {
+    @media (width >= #{$min}) {
+      @content;
+    }
+  } @else if $max != null {
+    @media (width <= #{$max}) {
+      @content;
+    }
+  }
+}

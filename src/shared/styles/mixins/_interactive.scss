@@ -1,0 +1,17 @@
+/// Hover-стили только для устройств с настоящим hover: на тач-устройствах
+/// `:hover` «залипает» после тапа.
+@mixin hover-only {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+/// Hover-состояние только для активного элемента: исключает `:disabled`
+/// и `[aria-disabled="true"]`.
+@mixin interactive-hover {
+  @include hover-only {
+    &:hover:not(:disabled, [aria-disabled="true"]) {
+      @content;
+    }
+  }
+}

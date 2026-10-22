@@ -1,0 +1,65 @@
+@use "variables" as *;
+@use "mixins/flex" as *;
+@use "mixins/a11y" as *;
+@use "mixins/media" as *;
+@use "mixins/transition" as *;
+@use "mixins/interactive" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-header;
+  background: $color-bg;
+  border-bottom: 1px solid $color-border;
+}
+
+.inner {
+  @include flex-between(center, $spacing-md);
+
+  height: 64px;
+}
+
+.brand {
+  @include inline-flex(row, flex-start, center, nowrap, $spacing-10);
+
+  color: $color-text-primary;
+  font-size: $font-size-sm + 0.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mark {
+  @include flex-center;
+
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 8px;
+  background: linear-gradient(140deg, $color-primary 0%, $color-secondary 100%);
+  color: $color-white;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  @include flex-row(center, flex-start, $spacing-22);
+
+  font-size: $font-size-sm;
+}
+
+.link {
+  color: $color-text-muted;
+  font-weight: 550;
+
+  @include transition(color);
+
+  @include interactive-hover {
+    color: $color-secondary;
+  }
+}
+
+@include media-max-md {
+  .nav {
+    display: none;
+  }
+}

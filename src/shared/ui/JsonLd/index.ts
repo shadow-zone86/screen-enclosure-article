@@ -1,0 +1,1 @@
+export { ArticleJsonLd } from "./ArticleJsonLd";

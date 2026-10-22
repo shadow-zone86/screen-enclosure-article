@@ -1,0 +1,42 @@
+# CI: те же проверки, что в Husky pre-commit, плюс ручной деплой на Vercel.
+# Переменные CI: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
+
+stages:
+  - verify
+  - deploy
+
+default:
+  image: node:22
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
+
+verify:
+  stage: verify
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npm run pre-commit
+  artifacts:
+    when: on_failure
+    expire_in: 1 week
+    paths:
+      - .next/
+      - coverage/
+
+deploy:vercel:
+  stage: deploy
+  needs: [verify]
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+  environment:
+    name: production
+    url: https://screen-enclosure-article.vercel.app
+  script:
+    - npm i -g vercel@latest
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN

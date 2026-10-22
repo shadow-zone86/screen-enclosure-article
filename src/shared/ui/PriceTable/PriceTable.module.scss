@@ -1,0 +1,111 @@
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+@use "mixins/elevation" as *;
+@use "mixins/interactive" as *;
+
+.card {
+  margin: 0;
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-card;
+  overflow: hidden;
+
+  @include shadow(card);
+}
+
+.caption {
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+
+  @include padding($spacing-14, $spacing-18, $spacing-10, $spacing-18);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-md;
+}
+
+.table thead th {
+  background: $color-bg-highlight;
+  border-bottom: 1px solid $color-border;
+  color: $color-text-muted;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+
+  @include padding($spacing-sm, $spacing-18, $spacing-sm, $spacing-18);
+}
+
+.table tbody td {
+  border-bottom: $table-cell-border;
+  vertical-align: top;
+
+  @include padding($spacing-15, $spacing-18, $spacing-15, $spacing-18);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr {
+  @include interactive-hover {
+    background: $color-bg-table-hover;
+  }
+}
+
+.table td + td {
+  color: $color-secondary;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@include media-max-md {
+  .caption {
+    @include padding($spacing-sm, $spacing-18, $spacing-xs, $spacing-18);
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tbody tr {
+    border-bottom: 1px solid $color-border;
+
+    @include padding($spacing-6, 0, $spacing-6, 0);
+  }
+
+  .table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table tbody td {
+    border: 0;
+
+    @include padding($spacing-2, $spacing-18, $spacing-2, $spacing-18);
+  }
+
+  .table tbody td:first-child {
+    color: $color-text-primary;
+    font-weight: 650;
+
+    @include padding($spacing-sm, $spacing-18, 0, $spacing-18);
+  }
+
+  .table tbody td:last-child {
+    white-space: normal;
+
+    @include padding(0, $spacing-18, $spacing-sm, $spacing-18);
+  }
+}

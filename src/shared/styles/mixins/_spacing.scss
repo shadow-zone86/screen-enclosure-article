@@ -1,0 +1,68 @@
+@use "sass:map";
+@use "../variables" as *;
+
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null {
+    margin-top: $top;
+  }
+
+  @if $right != null {
+    margin-right: $right;
+  }
+
+  @if $bottom != null {
+    margin-bottom: $bottom;
+  }
+
+  @if $left != null {
+    margin-left: $left;
+  }
+}
+
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null {
+    padding-top: $top;
+  }
+
+  @if $right != null {
+    padding-right: $right;
+  }
+
+  @if $bottom != null {
+    padding-bottom: $bottom;
+  }
+
+  @if $left != null {
+    padding-left: $left;
+  }
+}
+
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+$spacing-map: (
+  xxs: $spacing-xxs,
+  xs: $spacing-xs,
+  sm: $spacing-sm,
+  md: $spacing-md,
+  lg: $spacing-lg,
+  xl: $spacing-xl,
+  xxl: $spacing-xxl,
+) !default;
+
+@mixin gap($size: md) {
+  $token: map.get($spacing-map, $size);
+
+  @if $token != null {
+    gap: $token;
+  } @else {
+    gap: $size;
+  }
+}

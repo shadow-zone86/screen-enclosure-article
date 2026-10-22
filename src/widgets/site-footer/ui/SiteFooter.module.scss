@@ -1,0 +1,16 @@
+@use "variables" as *;
+@use "mixins/flex" as *;
+@use "mixins/spacing" as *;
+
+.footer {
+  background: $color-bg;
+  border-top: 1px solid $color-border;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+
+  @include padding($spacing-lg, 0, $spacing-40, 0);
+}
+
+.inner {
+  @include flex(row, space-between, center, wrap, $spacing-14);
+}

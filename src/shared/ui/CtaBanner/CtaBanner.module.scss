@@ -1,0 +1,61 @@
+@use "variables" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+
+.banner {
+  position: relative;
+  margin: 0;
+  border-radius: $radius-cta;
+  color: $color-white;
+  overflow: hidden;
+  background: linear-gradient(150deg, $color-cta-start 0%, $color-cta-mid 60%, $color-cta-end 100%);
+
+  @include padding($spacing-34, $spacing-30, $spacing-34, $spacing-30);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, $color-white-016, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-cta-title;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+
+  @include margin(0, 0, $spacing-10, 0);
+}
+
+.text {
+  max-width: 56ch;
+  color: $color-bg-highlight;
+  font-size: $font-size-md;
+
+  @include margin(0, 0, $spacing-22, 0);
+}
+
+.meta {
+  display: block;
+  color: $color-border;
+  font-size: $font-size-sm;
+
+  @include margin($spacing-14, 0, 0, 0);
+}
+
+@include media-max-md {
+  .banner {
+    @include padding($spacing-lg, $spacing-22, $spacing-lg, $spacing-22);
+  }
+
+  .title {
+    font-size: $font-size-xl;
+  }
+}

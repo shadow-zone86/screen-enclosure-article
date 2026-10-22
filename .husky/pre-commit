@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# Запуск из корня репозитория (важно при коммите из подпапок / GUI)
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || {
+  echo "husky: не git-репозиторий"
+  exit 1
+}
+cd "$ROOT" || exit 1
+
+echo "▶ pre-commit: type-check → eslint → stylelint → knip → test → build"
+npm run pre-commit || {
+  echo ""
+  echo "❌ Pre-commit не пройден. Обход (только если осознанно): HUSKY=0 git commit ..."
+  exit 1
+}

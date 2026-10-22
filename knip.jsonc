@@ -1,0 +1,8 @@
+{
+  // Фокус — зависимости: неиспользуемые и неуказанные в package.json,
+  // неиспользуемые файлы/экспорты/типы.
+  "exclude": [],
+  // Sass-слои подключаются через includePaths в next.config.ts, а не через import —
+  // knip такие ссылки не видит. Файлы стилей проверяет stylelint.
+  "ignoreFiles": ["src/shared/styles/**"]
+}

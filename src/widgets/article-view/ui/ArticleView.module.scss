@@ -1,0 +1,136 @@
+@use "variables" as *;
+@use "mixins/flex" as *;
+@use "mixins/spacing" as *;
+@use "mixins/media" as *;
+@use "mixins/interactive" as *;
+
+.hero {
+  @include padding($spacing-54, 0, 0, 0);
+}
+
+.eyebrow {
+  display: inline-block;
+  color: $color-accent;
+  font-size: $font-size-xs;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  @include margin(0, 0, $spacing-14, 0);
+}
+
+.title {
+  margin: 0;
+  font-size: $font-size-fluid-hero;
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  text-wrap: balance;
+
+  @include margin(0, 0, $spacing-18, 0);
+}
+
+.byline {
+  @include flex(row, flex-start, center, wrap, $spacing-xs);
+
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentcolor;
+}
+
+.body {
+  @include padding(0, 0, $spacing-lg, 0);
+
+  & > p {
+    color: $color-text;
+    font-size: $font-size-base;
+
+    @include margin(0, 0, $spacing-20, 0);
+  }
+
+  & > p:first-child {
+    color: $color-text;
+    font-size: $font-size-fluid-lead;
+    line-height: 1.6;
+
+    @include margin($spacing-26, 0, 0, 0);
+  }
+
+  h2 {
+    font-size: $font-size-fluid-heading;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    scroll-margin-top: 80px;
+
+    @include margin($spacing-44, 0, $spacing-14, 0);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 3px;
+      border-radius: 2px;
+      background: $color-accent;
+
+      @include margin(0, 0, $spacing-14, 0);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include margin($spacing-18, 0, $spacing-22, 0);
+  }
+
+  li {
+    position: relative;
+    color: $color-text;
+
+    @include padding(0, 0, 0, $spacing-30);
+    @include margin(0, 0, $spacing-sm, 0);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 11px;
+      left: 2px;
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      background: $color-primary;
+      opacity: 0.85;
+    }
+  }
+
+  strong {
+    color: $color-text-primary;
+    font-weight: 650;
+  }
+
+  figure,
+  section {
+    @include margin($spacing-22, 0, $spacing-22, 0);
+  }
+
+  a {
+    color: $color-secondary;
+    border-bottom: 2px solid $color-primary-035;
+
+    @include interactive-hover {
+      border-bottom-color: $color-primary;
+    }
+  }
+}
+
+@include media-max-md {
+  .hero {
+    @include padding($spacing-40, 0, 0, 0);
+  }
+}

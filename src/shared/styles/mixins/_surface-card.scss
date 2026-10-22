@@ -1,0 +1,10 @@
+@use "../variables" as *;
+@use "elevation" as *;
+
+@mixin surface-card {
+  background: $color-bg;
+  border: 1px solid $color-border-soft;
+  border-radius: $radius-card;
+  box-shadow: 0 4px 20px $color-shadow-subtle;
+  overflow: hidden;
+}
