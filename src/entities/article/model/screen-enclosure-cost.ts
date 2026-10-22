@@ -11,13 +11,13 @@ export const screenEnclosureCostArticle: Article = {
   modifiedAt: "2026-10-22",
   readingTime: "4 min read",
   lead:
-    "If you live in Florida, you already know that a screened outdoor space is less a luxury and more a way to enjoy your yard without the mosquitoes. The screen enclosure cost Florida homeowners budget for usually starts at $9,500 and can pass $33,500, depending on size and style. Below is a breakdown of the numbers, what moves them, and how long the work takes.",
+    "In Florida, a screened patio or pool is what makes the yard usable most of the year, not just in the cooler months. The screen enclosure cost Florida homeowners pay runs from $9,500 for a simple screen room to $33,500 and up for a large pool cage. Below is a breakdown of the numbers, what moves them, and how long the work takes.",
   blocks: [
     { type: "heading", id: "prices", text: "Screen Enclosure Prices at a Glance" },
     {
       type: "paragraph",
       text:
-        "Three project types cover most of what gets built. Each starting price below is for standard finishes, and the final screen enclosure cost Florida homeowners pay depends on measurements, roof shape, and the options they choose.",
+        "Three project types cover most of what gets built. Each starting price below is for standard finishes, and the final screen enclosure cost Florida homeowners face depends on measurements, roof shape, and the finishes they pick.",
     },
     {
       type: "table",
@@ -71,11 +71,6 @@ export const screenEnclosureCostArticle: Article = {
         },
       ],
     },
-    {
-      type: "paragraph",
-      text:
-        "A pool cage costs more than a patio screen because it spans a larger opening and carries a full roof.",
-    },
     { type: "heading", id: "permits", text: "Permits, Engineering, and Wind Load" },
     {
       type: "paragraph",
@@ -91,13 +86,13 @@ export const screenEnclosureCostArticle: Article = {
     {
       type: "paragraph",
       text:
-        "Coverage is up to 10 years on the aluminum structure, 5 years on the screen, and 365 days on the workmanship. Design, engineering, permit filing, and HOA approval can be handled for you, which removes the most tiring part of the project: the paperwork. A written quote should break out every line item, so the screen enclosure cost Florida homeowners agree to at the start is the price they pay at the end.",
+        "Coverage is up to 10 years on the aluminum structure, 5 years on the screen, and 365 days on the workmanship. Design, engineering, permit filing, and HOA approval can be handled for you, which keeps the paperwork off your desk. A written quote should break out every line item, so the price you agree to at the start is the price on the final invoice.",
     },
     {
       type: "cta",
       title: "Get a Free Estimate With an On-Site Measurement",
       text:
-        "Ready to see real numbers for your yard? Request a free estimate with an on-site measurement. We will show you a 3D visualization of the finished enclosure, so you can decide with the full picture in front of you.",
+        "Ready to see real numbers for your yard? Request a free estimate with an on-site measurement. We'll show you a 3D visualization of the finished enclosure before you commit, so you know exactly what you're paying for.",
     },
   ],
 };
