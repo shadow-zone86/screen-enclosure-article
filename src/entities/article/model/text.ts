@@ -48,7 +48,9 @@ export function countKeywordOccurrences(article: Article, keyword = article.prim
 
 export function countHeadings(article: Article, level: "h2" | "h3" = "h2"): number {
   if (level === "h3") return 0;
-  return article.blocks.filter((block) => block.type === "heading").length;
+  // CTA тоже рендерится как H2 (`CtaBanner`), поэтому считаем его вместе с секциями,
+  // чтобы цифра в панели редактора совпадала с разметкой страницы.
+  return article.blocks.filter((block) => block.type === "heading" || block.type === "cta").length;
 }
 
 export function findBannedClaims(article: Article): string[] {
