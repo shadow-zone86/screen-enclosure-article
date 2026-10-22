@@ -19,13 +19,13 @@
 .primary {
   @include padding($spacing-14, $spacing-lg, $spacing-14, $spacing-lg);
 
-  background: $color-accent;
+  background: $color-accent-ink;
   color: $color-white;
   font-size: $font-size-md;
   box-shadow: 0 6px 18px $color-shadow-deep;
 
   @include interactive-hover {
-    background: $color-accent-dark;
+    background: $color-accent-ink-hover;
     color: $color-white;
   }
 }
