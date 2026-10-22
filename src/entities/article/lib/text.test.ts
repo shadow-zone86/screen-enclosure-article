@@ -33,8 +33,8 @@ describe("бриф статьи про стоимость", () => {
     expect(article.description.length).toBeLessThanOrEqual(155);
   });
 
-  it("держит один H1 и 4–5 H2", () => {
-    expect(article.h1).toHaveLength(article.h1.length);
+  it("держит непустой H1 и 4–5 H2", () => {
+    expect(article.h1.trim()).not.toBe("");
 
     const h2 = countHeadings(article);
 
