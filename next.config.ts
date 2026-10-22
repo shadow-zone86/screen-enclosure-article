@@ -22,10 +22,12 @@ const nextConfig: NextConfig = {
       "../build/polyfills/polyfill-module": false,
     },
   },
-  // Каждый *.module.scss делает `@use "variables" as *` без относительных путей:
-  // loadPaths добавляет src/shared/styles в корень разрешения Sass.
+  // Токены и миксины инжектируются в каждый *.scss глобально (как в unesi-ka):
+  // компоненты не пишут @use. loadPaths добавляет src/shared/styles
+  // в корень разрешения Sass, чтобы prelude находил variables и mixins/*.
   sassOptions: {
     loadPaths: [sharedStyles],
+    additionalData: '@use "prelude" as *;\n',
   },
   async headers() {
     return [

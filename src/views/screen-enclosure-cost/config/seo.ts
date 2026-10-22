@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { screenEnclosureCostArticle as article } from "@entities/article";
 
 export const metadata: Metadata = {
-  // Absolute: 50 знаков бюджета Title не растягиваются шаблоном сайта.
   title: { absolute: article.title },
   description: article.description,
   keywords: [

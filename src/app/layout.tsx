@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { SITE } from "@shared/config/site";
+import { SITE } from "@shared/config/constants";
 import { SiteHeader } from "@widgets/site-header";
 import { SiteFooter } from "@widgets/site-footer";
+import { SKIP_LINK_LABEL } from "./config/constants";
 import "@shared/styles/main.scss";
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <a className="skip-link" href="#main">
-          Skip to content
+          {SKIP_LINK_LABEL}
         </a>
         <SiteHeader />
         {children}

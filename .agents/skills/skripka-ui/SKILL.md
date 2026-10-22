@@ -17,9 +17,11 @@ description: >-
   Не Tailwind, не CSS-in-JS, не инлайн-стили.
 - Один головной компонент — один модуль. Приватные части используют модуль родителя
   (например, `TextField` → `../EstimateForm.module.scss`).
-- В каждом модуле явный `@use "variables" as *;` и нужные миксины:
-  `@use "mixins/spacing" as *;`. Резолв идёт через `sassOptions.loadPaths`
-  (`src/shared/styles`) — относительные пути не нужны.
+- В модулях не пишем `@use`: `_prelude.scss` глобально подключает `variables` и все миксины
+  через `sassOptions.additionalData` (Next) и `additionalData` в Storybook. Токены и миксины
+  доступны сразу: `$spacing-md`, `@include flex-between`.
+- `_prelude.scss` — единственное место, где перечислены глобальные миксины: новый миксин
+  добавляется туда. Резолв — через `loadPaths` (`src/shared/styles`), без относительных путей.
 - Глобальный вход один: `@shared/styles/main.scss` в `src/app/layout.tsx`.
 
 ## Токены
@@ -49,7 +51,7 @@ description: >-
   типы вроде `PriceRow` лежат в `src/shared/model/types.ts`, не в entities.
 - Пропсы — `type`, не `interface`; массивы — `T[]` (`consistent-type-definitions`,
   `array-type` в ESLint).
-- `max-lines: 100` для `src/**/*.tsx` (кроме тестов и сторис): выносите данные в `model/`,
-  части — в `ui/components/`.
+- `max-lines: 100` для `src/**/*.tsx` (кроме тестов и сторис): выносите данные и тексты
+  в `config/constants.ts`, части — в `ui/components/`.
 - Ссылки — `next/link`, кнопка-ссылка — `Button` с пропом `href`, без `<a>` вручную.
 - Заголовки по порядку: один `<h1>` на страницу (в `ArticleView`), секции — `<h2>`.

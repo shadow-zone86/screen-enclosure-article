@@ -7,10 +7,6 @@ export type ArticleBlock =
   | { type: "table"; caption: string; rows: PriceRow[] }
   | { type: "cta"; title: string; text: string };
 
-/**
- * Статья как данные: страница только раскладывает блоки по компонентам,
- * поэтому текст можно отдать из CMS, не трогая вёрстку.
- */
 export type Article = {
   slug: `/${string}`;
   h1: string;

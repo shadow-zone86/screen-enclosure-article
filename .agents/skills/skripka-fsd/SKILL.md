@@ -33,7 +33,7 @@ Next трактует `src/pages` как Pages Router и падает на ко�
 
 ## Public API
 
-- Каждый слайс отдаёт наружу только `index.ts`; внутренние сегменты (`ui/`, `model/`, `lib/`) — приватные.
+- Каждый слайс отдаёт наружу только `index.ts`; внутренние сегменты (`ui/`, `model/`, `lib/`, `config/`) — приватные.
 - Глубокие импорты (`@/widgets/site-header/ui/...`) запрещены ESLint (`no-restricted-imports`).
 - `ui/components/*` — приватные части головного TSX, из `index.ts` не экспортируются
   (это же правило проверяет `no-restricted-syntax`).
@@ -60,5 +60,8 @@ Route-файл ничего не верстает и не считает: тол
 ## Что где лежит
 
 - `src/app/layout.tsx` — `<html lang="en">`, skip-link, `SiteHeader`/`SiteFooter`, импорт `@shared/styles/main.scss`.
-- `src/app/sitemap.ts` / `robots.ts` — URL берут из `SITE` и slug-ов статей, не из литералов.
+- `src/app/sitemap.ts` / `robots.ts` — URL берут из `SITE` и slug-ов статей, не из литералов;
+  маршруты и правила — в `src/app/config/constants.ts`.
 - `src/app/_*` не создавать: приватные компоненты живут в слоях, а не рядом с маршрутами.
+- Сегменты слайса: `model/types.ts` — типы, `lib/` — логика и хуки, `config/constants.ts` —
+  константы и тексты, `config/seo.ts` — metadata. Детали — в скилле `skripka-slice`.

@@ -1,2 +1,2 @@
 export { HomePage } from "./ui/HomePage";
-export { metadata } from "./model/seo";
+export { metadata } from "./config/seo";

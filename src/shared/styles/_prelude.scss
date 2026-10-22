@@ -1,0 +1,13 @@
+// Глобальный prelude: токены и миксины доступны в каждом *.scss без @use.
+// Подключается через sassOptions.additionalData (Next) и
+// css.preprocessorOptions.scss.additionalData (Storybook).
+@forward "variables";
+@forward "mixins/a11y";
+@forward "mixins/elevation";
+@forward "mixins/field-control";
+@forward "mixins/flex";
+@forward "mixins/interactive";
+@forward "mixins/media";
+@forward "mixins/spacing";
+@forward "mixins/surface-card";
+@forward "mixins/transition";

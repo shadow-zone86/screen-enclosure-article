@@ -1,4 +1,12 @@
-export const HOME_CARDS = [
+import type { HomeCard, HomePageText } from "../model/types";
+
+export const HOME_PAGE_TEXT: HomePageText = {
+  title: "Screened pools and patios, built for Florida weather",
+  leadPrefix: "We design, engineer, permit, and install aluminum screen enclosures across",
+  leadSuffix: "Start with the cost guide, then book a free on-site measurement.",
+};
+
+export const HOME_CARDS: readonly HomeCard[] = [
   {
     href: "/blog/screen-enclosure-cost-florida",
     label: "Cost guide",
@@ -17,4 +25,4 @@ export const HOME_CARDS = [
     title: "Book a free on-site measurement",
     text: "We measure, check HOA rules, and show a 3D visualization before you decide.",
   },
-] as const;
+];

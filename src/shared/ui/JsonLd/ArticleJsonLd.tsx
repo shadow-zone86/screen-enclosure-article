@@ -1,4 +1,4 @@
-import { SITE } from "@shared/config/site";
+import { JSON_LD_LOCALE, SITE } from "@shared/config/constants";
 
 type ArticleJsonLdProps = {
   headline: string;
@@ -8,7 +8,6 @@ type ArticleJsonLdProps = {
   dateModified: string;
 };
 
-/** Article schema для rich results. Поля берутся из тех же данных, что и страница. */
 export function ArticleJsonLd({
   headline,
   description,
@@ -23,7 +22,7 @@ export function ArticleJsonLd({
     description,
     datePublished,
     dateModified,
-    inLanguage: "en-US",
+    inLanguage: JSON_LD_LOCALE,
     author: { "@type": "Organization", name: SITE.name, url: SITE.url },
     publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE.url}${slug}` },

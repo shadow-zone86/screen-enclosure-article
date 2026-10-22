@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 import { Button } from "@shared/ui/Button";
-import {
-  EMPTY_ESTIMATE,
-  validateEstimate,
-  type EstimateErrors,
-  type EstimateValues,
-} from "../model/validation";
-import { TEXT_FIELDS } from "../model/fields";
+import { EMPTY_ESTIMATE, ESTIMATE_FORM_TEXT, TEXT_FIELDS } from "../config/constants";
+import { validateEstimate } from "../lib/validation";
+import type { EstimateErrors, EstimateValues } from "../model/types";
 import { TextField } from "./components/TextField";
 import styles from "./EstimateForm.module.scss";
 
@@ -34,8 +30,8 @@ export function EstimateForm() {
   if (submitted) {
     return (
       <p className={styles.success} role="status">
-        <strong>Request received.</strong> We will call {values.name.trim()} within one business
-        day to schedule the measurement.
+        <strong>{ESTIMATE_FORM_TEXT.successTitle}</strong> {ESTIMATE_FORM_TEXT.successPrefix}{" "}
+        {values.name.trim()} {ESTIMATE_FORM_TEXT.successSuffix}
       </p>
     );
   }
@@ -54,7 +50,7 @@ export function EstimateForm() {
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="notes">
-          Anything we should know? (optional)
+          {ESTIMATE_FORM_TEXT.notesLabel}
         </label>
         <textarea
           className={styles.input}
@@ -66,10 +62,8 @@ export function EstimateForm() {
         />
       </div>
 
-      <Button type="submit">Request my free estimate</Button>
-      <span className={styles.hint}>
-        Demo form: nothing is sent or stored, the request stops in this browser.
-      </span>
+      <Button type="submit">{ESTIMATE_FORM_TEXT.submitLabel}</Button>
+      <span className={styles.hint}>{ESTIMATE_FORM_TEXT.demoHint}</span>
     </form>
   );
 }

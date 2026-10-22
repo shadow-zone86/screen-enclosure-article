@@ -28,9 +28,12 @@ React 19, TypeScript, SCSS Modules, Feature-Sliced Design, Vitest, Storybook.
 - Перед коммитом проходит `npm run pre-commit` (type-check → lint → lint:style →
   knip → test → build; хук Husky). Отдельно `npm run spell` (cspell) — для `*.md`,
   `.agents/`, конфигов.
-- Контент статьи живёт в `src/entities/article/model/*.ts`, а не в TSX: страница
-  только раскладывает блоки по компонентам.
+- Контент статьи живёт в `src/entities/article/config/constants.ts`, а не в TSX:
+  страница только раскладывает блоки по компонентам.
+- Сегменты среза как в `unesi-ka`: `model/types.ts` — только типы, `lib/` — логика,
+  хуки и функции, `config/constants.ts` — константы и весь текст, `config/seo.ts` — metadata.
+  Текстовые константы типизируются через `model/types.ts`, без `as const`.
 - Лимит ESLint `max-lines: 100` действует на `src/**/*.tsx`, кроме тестов и сторис:
-  данные — в `model/`, приватные части — в `ui/components/`.
+  данные и тексты — в `config/constants.ts`, приватные части — в `ui/components/`.
 - Next считает `src/pages` Pages Router-ом, поэтому слой страниц — `src/views`
   (алиас `@views/*`). Не переименовывать обратно.

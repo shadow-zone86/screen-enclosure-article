@@ -10,13 +10,16 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs-vite",
     options: {},
   },
-  // Next прокидывает loadPaths через sassOptions, а Vite-сборка Storybook — нет.
+  // Тот же prelude, что и в next.config.ts: компоненты не пишут @use.
   viteFinal(viteConfig) {
     viteConfig.css = {
       ...viteConfig.css,
       preprocessorOptions: {
         ...viteConfig.css?.preprocessorOptions,
-        scss: { loadPaths: [sharedStyles] },
+        scss: {
+          loadPaths: [sharedStyles],
+          additionalData: '@use "prelude" as *;\n',
+        },
       },
     };
 

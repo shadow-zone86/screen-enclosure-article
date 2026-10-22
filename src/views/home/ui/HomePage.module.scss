@@ -1,19 +1,10 @@
-@use "variables" as *;
-@use "mixins/flex" as *;
-@use "mixins/spacing" as *;
-@use "mixins/media" as *;
-@use "mixins/elevation" as *;
-@use "mixins/a11y" as *;
-@use "mixins/transition" as *;
-@use "mixins/interactive" as *;
-
 .landing {
   @include padding($spacing-64, 0, $spacing-40, 0);
 }
 
 .eyebrow {
   display: inline-block;
-  color: $color-accent;
+  color: $color-accent-ink;
   font-size: $font-size-xs;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -73,7 +64,7 @@
 }
 
 .cardLabel {
-  color: $color-accent;
+  color: $color-accent-ink;
   font-size: $font-size-xs;
   font-weight: 700;
   letter-spacing: 0.1em;

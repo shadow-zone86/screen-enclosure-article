@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE } from "@shared/config/site";
+import { SITE } from "@shared/config/constants";
 
 export const metadata: Metadata = {
   title: "Screen Enclosures in Southwest Florida",

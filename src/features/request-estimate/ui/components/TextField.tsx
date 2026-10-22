@@ -1,4 +1,4 @@
-import type { TextFieldConfig } from "../../model/fields";
+import type { TextFieldConfig } from "../../model/types";
 import styles from "../EstimateForm.module.scss";
 
 type TextFieldProps = {

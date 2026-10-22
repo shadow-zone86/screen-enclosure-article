@@ -1,7 +1,5 @@
-import type { Article, ArticleBlock } from "./types";
-
-/** Заявления, которые запрещены брифом: без «best», «cheapest», «number one». */
-const BANNED_CLAIMS = ["best", "cheapest", "number one"] as const;
+import { BANNED_CLAIMS } from "../config/constants";
+import type { Article, ArticleBlock } from "../model/types";
 
 function blockText(block: ArticleBlock): string {
   switch (block.type) {
@@ -21,7 +19,6 @@ function blockText(block: ArticleBlock): string {
   }
 }
 
-/** Весь видимый текст статьи: H1, лид и блоки — то, что считает редактор. */
 function articleText(article: Article): string {
   return [article.h1, article.lead, ...article.blocks.map(blockText)].join(" ");
 }

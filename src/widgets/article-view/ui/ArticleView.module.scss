@@ -1,16 +1,10 @@
-@use "variables" as *;
-@use "mixins/flex" as *;
-@use "mixins/spacing" as *;
-@use "mixins/media" as *;
-@use "mixins/interactive" as *;
-
 .hero {
   @include padding($spacing-54, 0, 0, 0);
 }
 
 .eyebrow {
   display: inline-block;
-  color: $color-accent;
+  color: $color-accent-ink;
   font-size: $font-size-xs;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -119,7 +113,9 @@
     @include margin($spacing-22, 0, $spacing-22, 0);
   }
 
-  a {
+  // :not([class]) — стилизуем только ссылки из контента; кнопки-ссылки кита
+  // носят классы и не должны перекрашиваться и получать подчёркивание.
+  a:not([class]) {
     color: $color-secondary;
     border-bottom: 2px solid $color-primary-035;
 

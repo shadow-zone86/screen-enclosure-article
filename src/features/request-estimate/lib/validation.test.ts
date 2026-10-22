@@ -1,11 +1,6 @@
 import { describe, expect, it } from "vitest";
-import {
-  EMPTY_ESTIMATE,
-  ESTIMATE_MESSAGES,
-  MIN_PHONE_DIGITS,
-  countDigits,
-  validateEstimate,
-} from "./validation";
+import { EMPTY_ESTIMATE, ESTIMATE_MESSAGES, MIN_PHONE_DIGITS } from "../config/constants";
+import { countDigits, validateEstimate } from "./validation";
 
 const VALID = {
   name: "Dana Reed",

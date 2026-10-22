@@ -19,7 +19,12 @@ src/<layer>/<slice-kebab-case>/
     <SliceName>.tsx     # головной компонент
     <SliceName>.module.scss
     components/         # приватные части, наружу не выходят
-  model/                # типы, данные, хелперы, валидация, seo.ts
+  model/
+    types.ts            # только типы и интерфейсы
+  lib/                  # бизнес-логика: хуки, функции, валидация, форматтеры
+  config/
+    constants.ts        # константы и весь хардкод: тексты, лейблы, числа, URL
+    seo.ts              # metadata для Next
 ```
 
 Слайс может не иметь `ui/` (например, `entities/article`) или не иметь `model/`
@@ -30,16 +35,21 @@ src/<layer>/<slice-kebab-case>/
 - Имя папки — kebab-case (`request-estimate`), имя компонента — PascalCase (`EstimateForm`).
 - `index.ts` — единственная точка входа снаружи. Экспортировать только то, что реально
   используется: Knip валит неиспользуемые экспорты.
+- `model/types.ts` — только типы и интерфейсы (`type`, не `interface`: `consistent-type-definitions`).
+- `lib/` — бизнес-логика: хуки, валидация, форматтеры, хелперы. Растущий `lib/`
+  раскладывается по назначению (`lib/formatter/`, `lib/hooks/`). Тесты — рядом
+  (`lib/validation.test.ts`, `lib/formatter/format-date.test.ts`).
+- `config/constants.ts` — весь хардкод: тексты, лейблы, числа, URL. Текстовые объекты
+  типизируются через `model/types.ts` (`FREE_ESTIMATE_TEXT: FreeEstimateText`), а не через `as const`.
+- `config/seo.ts` — объект `metadata` для Next; наружу выходит через `index.ts`.
 - Приватная часть головного компонента — `ui/components/*`, из `index.ts` не экспортируется.
-- Данные и константы — в `model/`, а не в TSX: это и требование `max-lines: 100`, и путь к CMS.
-- `model/seo.ts` — объект `metadata` для Next; наружу выходит через `index.ts`.
-- Тесты — рядом с кодом (`model/text.test.ts`, `ui/EstimateForm.test.tsx`).
+- Тесты — рядом с кодом (`lib/validation.test.ts`, `ui/EstimateForm.test.tsx`).
 - Сторис — рядом с компонентом (`shared/ui/Button/Button.stories.tsx`).
 
 ## Чек-лист нового среза
 
 1. Папка в нужном слое, kebab-case.
-2. `ui/` + `model/`, если есть и разметка, и данные.
+2. `ui/`, `model/types.ts`, `lib/`, `config/constants.ts` — если есть и разметка, и данные.
 3. `index.ts` с минимальным публичным API.
 4. Импорт только из public API соседних слайсов.
 5. `npm run lint && npm run knip && npm test && npm run build`.

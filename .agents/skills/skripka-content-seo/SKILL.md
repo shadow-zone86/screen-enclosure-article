@@ -2,7 +2,7 @@
 name: skripka-content-seo
 description: >-
   Applies the content and SEO rules of this project: article copy lives in
-  entities/article/model as typed blocks, brief constraints (400–500 words,
+  entities/article/config/constants.ts as typed blocks, brief constraints (400–500 words,
   keyword once in the lead and 2–4 total, Title ≤ 60, description ≤ 155, 4–5 H2,
   no best/cheapest/number one, internal links, CTA with free on-site measurement),
   EditorNotes panel, Article JSON-LD, metadata and canonical. Use when editing
@@ -15,7 +15,7 @@ description: >-
 
 ## Где текст
 
-`src/entities/article/model/<slug>.ts` — объект `Article`: `h1`, `title`, `description`,
+`src/entities/article/config/constants.ts` — объекты `Article`: `h1`, `title`, `description`,
 `primaryKeyword`, `slug`, даты, `lead`, `blocks`. Никакого текста в JSX.
 
 Типы блоков (`model/types.ts`):
@@ -28,7 +28,7 @@ description: >-
 
 `lead` — вводный абзац 50–80 слов, в нём ключ обязан встретиться.
 
-## Бриф (проверяется тестом `model/content.test.ts`)
+## Бриф (проверяется тестом `lib/text.test.ts`)
 
 | Требование | Как проверяется |
 |-----------|-----------------|
@@ -44,7 +44,7 @@ description: >-
 
 ## Метаданные
 
-- `src/views/<slice>/model/seo.ts` — `Metadata`: `title: { absolute }` (чтобы шаблон
+- `src/views/<slice>/config/seo.ts` — `Metadata`: `title: { absolute }` (чтобы шаблон
   `%s | Gulf Coast Screen` не ломал лимит 60), `description`, `keywords`,
   `alternates.canonical`, `openGraph` (`type: "article"`, даты), при необходимости `twitter`.
 - `ArticleJsonLd` (`shared/ui/JsonLd`) получает примитивы, а не entity, и берёт домен из `SITE`.

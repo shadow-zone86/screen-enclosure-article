@@ -15,6 +15,11 @@ $color-accent: #e2703a !default;
 $color-accent-light: #f4a077 !default;
 $color-accent-dark: #d05f2c !default;
 
+// Акцент для мелкого текста на светлом фоне и фона основных кнопок:
+// держит контраст ≥ 4.5:1 с $color-bg-page и $color-bg (WCAG AA)
+$color-accent-ink: #b34a1f !default;
+$color-accent-ink-hover: #9a3f19 !default;
+
 // --- Семантика ---
 $color-success: #2f8a4f !default;
 $color-success-dark: #1f5c33 !default;

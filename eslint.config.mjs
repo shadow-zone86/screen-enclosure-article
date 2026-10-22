@@ -236,7 +236,7 @@ export default tseslint.config(
       ],
     },
   },
-  // Лимит размера компонента: контент и данные — в model/, а не в TSX.
+  // Лимит размера компонента: контент и данные — в config/constants.ts, а не в TSX.
   {
     files: ["src/**/*.tsx"],
     ignores: ["**/*.test.tsx", "**/*.stories.tsx"],

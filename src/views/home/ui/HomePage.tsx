@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@shared/ui/Container";
-import { SITE } from "@shared/config/site";
-import { HOME_CARDS } from "../model/cards";
+import { SITE } from "@shared/config/constants";
+import { HOME_CARDS, HOME_PAGE_TEXT } from "../config/constants";
 import styles from "./HomePage.module.scss";
 
 export function HomePage() {
@@ -9,11 +9,9 @@ export function HomePage() {
     <Container>
       <main id="main" className={styles.landing}>
         <span className={styles.eyebrow}>{SITE.shortName}</span>
-        <h1 className={styles.title}>Screened pools and patios, built for Florida weather</h1>
+        <h1 className={styles.title}>{HOME_PAGE_TEXT.title}</h1>
         <p className={styles.lead}>
-          We design, engineer, permit, and install aluminum screen enclosures across{" "}
-          {SITE.serviceArea.join(", ")}. Start with the cost guide, then book a free on-site
-          measurement.
+          {HOME_PAGE_TEXT.leadPrefix} {SITE.serviceArea.join(", ")}. {HOME_PAGE_TEXT.leadSuffix}
         </p>
 
         <ul className={styles.cards}>

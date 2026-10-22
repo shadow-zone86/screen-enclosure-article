@@ -1,5 +1,5 @@
 import { Container } from "@shared/ui/Container";
-import { SITE } from "@shared/config/site";
+import { SITE } from "@shared/config/constants";
 import styles from "./SiteFooter.module.scss";
 
 export function SiteFooter() {

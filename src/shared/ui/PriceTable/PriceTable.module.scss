@@ -1,9 +1,3 @@
-@use "variables" as *;
-@use "mixins/spacing" as *;
-@use "mixins/media" as *;
-@use "mixins/elevation" as *;
-@use "mixins/interactive" as *;
-
 .card {
   margin: 0;
   background: $color-bg;

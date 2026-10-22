@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Button } from "@shared/ui/Button";
 import { Container } from "@shared/ui/Container";
-import { ESTIMATE_HREF, NAV_LINKS, SITE } from "@shared/config/site";
+import { ESTIMATE_HREF, NAV_LINKS, SITE } from "@shared/config/constants";
+import { SITE_HEADER_TEXT } from "../config/constants";
 import styles from "./SiteHeader.module.scss";
 
 export function SiteHeader() {
@@ -10,7 +11,7 @@ export function SiteHeader() {
       <Container className={styles.inner}>
         <Link className={styles.brand} href="/">
           <span className={styles.mark} aria-hidden="true">
-            GC
+            {SITE_HEADER_TEXT.mark}
           </span>
           {SITE.name}
         </Link>
@@ -21,7 +22,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Button href={ESTIMATE_HREF} variant="ghost">
-            Free estimate
+            {SITE_HEADER_TEXT.estimateLabel}
           </Button>
         </nav>
       </Container>
