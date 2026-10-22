@@ -1,3 +1,5 @@
+export type RangeStatus = "ok" | "warn";
+
 export type EditorNotesTarget = {
   minWords: number;
   maxWords: number;
