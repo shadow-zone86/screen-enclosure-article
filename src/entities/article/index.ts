@@ -1,4 +1,4 @@
-export type { Article, ArticleBlock } from "./model/types";
+export type { Article, ArticleBlock, ArticleLink } from "./model/types";
 export { poolCageCostArticle, screenEnclosureCostArticle } from "./config/constants";
 export {
   countArticleWords,

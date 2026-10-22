@@ -5,6 +5,7 @@ import {
   findBannedClaims,
   findInternalLinks,
   type Article,
+  type ArticleLink,
 } from "@entities/article";
 import { ESTIMATE_HREF } from "@shared/config/constants";
 import { EDITOR_NOTES_TARGET, EDITOR_NOTES_TEXT } from "../config/constants";
@@ -12,11 +13,11 @@ import { useRangeStatus } from "../lib/hooks/useRangeStatus";
 import styles from "./EditorNotes.module.scss";
 
 export function EditorNotes({ article }: { article: Article }) {
-  const words = countArticleWords(article);
-  const keyword = countKeywordOccurrences(article);
-  const h2 = countHeadings(article);
-  const banned = findBannedClaims(article);
-  const links = [
+  const words: number = countArticleWords(article);
+  const keyword: number = countKeywordOccurrences(article);
+  const h2: number = countHeadings(article);
+  const banned: string[] = findBannedClaims(article);
+  const links: ArticleLink[] = [
     ...findInternalLinks(article),
     { anchor: EDITOR_NOTES_TEXT.ctaAnchor, href: ESTIMATE_HREF },
   ];

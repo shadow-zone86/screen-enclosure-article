@@ -4,7 +4,7 @@
 
 .eyebrow {
   display: inline-block;
-  color: $color-accent-ink;
+  color: $color-accent;
   font-size: $font-size-xs;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -113,9 +113,7 @@
     @include margin($spacing-22, 0, $spacing-22, 0);
   }
 
-  // :not([class]) — стилизуем только ссылки из контента; кнопки-ссылки кита
-  // носят классы и не должны перекрашиваться и получать подчёркивание.
-  a:not([class]) {
+  a {
     color: $color-secondary;
     border-bottom: 2px solid $color-primary-035;
 

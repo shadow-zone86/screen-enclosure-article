@@ -7,6 +7,11 @@ export type ArticleBlock =
   | { type: "table"; caption: string; rows: PriceRow[] }
   | { type: "cta"; title: string; text: string };
 
+export type ArticleLink = {
+  anchor: string;
+  href: string;
+};
+
 export type Article = {
   slug: `/${string}`;
   h1: string;

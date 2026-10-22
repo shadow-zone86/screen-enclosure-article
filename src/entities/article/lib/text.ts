@@ -1,5 +1,5 @@
 import { BANNED_CLAIMS } from "../config/constants";
-import type { Article, ArticleBlock } from "../model/types";
+import type { Article, ArticleBlock, ArticleLink } from "../model/types";
 
 function blockText(block: ArticleBlock): string {
   switch (block.type) {
@@ -55,7 +55,7 @@ export function findBannedClaims(article: Article): string[] {
   return BANNED_CLAIMS.filter((claim) => haystack.includes(claim));
 }
 
-export function findInternalLinks(article: Article): { anchor: string; href: string }[] {
+export function findInternalLinks(article: Article): ArticleLink[] {
   return article.blocks.flatMap((block) => {
     if (block.type !== "table") return [];
     return block.rows.flatMap((row) =>
