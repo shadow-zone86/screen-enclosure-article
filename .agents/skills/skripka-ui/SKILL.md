@@ -1,12 +1,13 @@
 ---
 name: skripka-ui
 description: >-
-  Applies the project's React UI rules: SCSS Modules in *.module.scss, tokens from
-  src/shared/styles (_palette, _variables), mixins (flex, spacing, media, a11y,
-  interactive, elevation, field-control), explicit @use, shared/ui kit, ESLint
-  max-lines 100, accessibility. Use when writing screens, components, styles,
-  layout, a11y, or when the user mentions SCSS, модуль, токены, миксины, палитра,
-  spacing, shared/ui, компонент, доступность.
+  Applies the project's React UI rules: SCSS Modules in *.module.scss, global
+  SCSS prelude (no @use in modules), tokens from src/shared/styles (_palette,
+  _variables), mixins (flex, spacing, media, a11y, interactive, elevation,
+  field-control), WCAG AA contrast, shared/ui kit, ESLint max-lines 100,
+  accessibility. Use when writing screens, components, styles, layout, a11y, or
+  when the user mentions SCSS, модуль, токены, миксины, палитра, spacing,
+  shared/ui, компонент, доступность.
 ---
 
 # UI и стили
@@ -33,6 +34,9 @@ description: >-
 - Spacing — через миксины `margin` / `padding` / `padding-x` / `gap`.
   Stylelint запрещает сырой `px` в `margin`/`padding`/`gap` и `font-size`.
 - Заголовки — fluid-токены (`$font-size-fluid-hero/heading/lead`), не сырой `clamp()`.
+- Контраст — WCAG AA (≥ 4.5:1): акцентный мелкий текст на светлом фоне и фон основной
+  кнопки — только `$color-accent-ink` / `$color-accent-ink-hover`; `$color-accent` —
+  для декоративных элементов (полоски, маркеры), не для текста.
 
 ## Миксины
 
@@ -54,4 +58,6 @@ description: >-
 - `max-lines: 100` для `src/**/*.tsx` (кроме тестов и сторис): выносите данные и тексты
   в `config/constants.ts`, части — в `ui/components/`.
 - Ссылки — `next/link`, кнопка-ссылка — `Button` с пропом `href`, без `<a>` вручную.
+- Стили ссылок контента не должны перебивать кнопки кита по специфичности: ограничивайте
+  селектор (в `ArticleView` — `.body a:not([class])`).
 - Заголовки по порядку: один `<h1>` на страницу (в `ArticleView`), секции — `<h2>`.

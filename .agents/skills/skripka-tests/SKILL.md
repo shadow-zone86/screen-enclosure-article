@@ -26,6 +26,7 @@ description: >-
 - Тесты вправе импортировать внутренние сегменты своего среза, но не других слайсов в обход public API.
 - `next/link` в jsdom рендерится как `<a>`; мок нужен, только если тест проверяет навигацию.
   `metadata` не рендерится — проверяйте объект из `config/seo.ts` напрямую, если нужно.
+- Хуки — `renderHook` из `@testing-library/react` (пример: `lib/hooks/useRangeStatus.test.ts`).
 - Формы: `fireEvent` из Testing Library достаточно; `user-event` в проекте нет.
 - Контент-бриф проверяется тестом, а не глазами: см. `skripka-content-seo`.
 

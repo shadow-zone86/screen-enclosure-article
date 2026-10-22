@@ -15,7 +15,7 @@ React 19, TypeScript, SCSS Modules, Feature-Sliced Design, Vitest, Storybook.
 | `.agents/skills/skripka-fsd/SKILL.md` | слои FSD, граф импортов, public API, `src/views` вместо `src/pages`, route-контракты |
 | `.agents/skills/skripka-slice/SKILL.md` | добавление/правка среза: структура папок, `index.ts`, `ui/components` |
 | `.agents/skills/skripka-ui/SKILL.md` | компоненты, `*.module.scss`, токены `src/shared/styles`, `shared/ui`, лимит 100 строк, a11y |
-| `.agents/skills/skripka-tests/SKILL.md` | Vitest + happy-dom/jsdom, колокированные тесты, русские `it`, стабы `next/link` |
+| `.agents/skills/skripka-tests/SKILL.md` | Vitest + jsdom, колокированные тесты, русские `it`, стабы `next/link` |
 | `.agents/skills/skripka-content-seo/SKILL.md` | тексты статей, бриф (объём, ключ, Title/description, запрещённые заявления), `EditorNotes`, JSON-LD |
 
 ## Правила
